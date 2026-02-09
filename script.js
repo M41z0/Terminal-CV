@@ -2,7 +2,7 @@ const output = document.getElementById('output');
 const input = document.getElementById('cmd-input');
 
 const commands = {
-    'whoami': 'Alexis Schwaederle',
+    'whoami': '<br>Alexis Schwaederle',
     'skills': () => {
         const skillsText = `
 
