@@ -1,0 +1,192 @@
+body {
+    background: #1a1a1a;
+    color: #00ff00;
+    font-family: 'Courier New', monospace;
+    margin: 0;
+    height: 100vh;
+    overflow: hidden;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Terminal avec bordure */
+.terminal {
+    width: 90vw;
+    height: 90vh;
+    max-width: 1200px;
+    max-height: 800px;
+    background: #000;
+    border: 2px solid #c0c0c0;
+    box-shadow: 
+        0 0 0 1px #dfdfdf,
+        0 0 0 3px #cacaca,
+        0 10px 30px rgba(0,0,0,0.8);
+    position: relative;
+}
+
+/* Barre de titre */
+.terminal::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 28px;
+    background: linear-gradient(to bottom, #ffffff 0%, #808080 70%, #ffffff 100%);
+    border-bottom: 1px solid #dfdfdf;
+}
+
+/* CONTENU DE LA BARRE : 3 boutons + titre */
+.terminal-titlebar {
+    position: absolute;
+    top: 4px;
+    left: 8px;
+    right: 8px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+    color: #000;
+    font-weight: bold;
+    z-index: 10;
+}
+
+/* Les 3 icônes de fenêtre */
+.window-controls {
+    display: flex;
+    gap: 2px;
+    margin-right: auto;
+}
+
+.icon {
+    width: 18px;
+    height: 16px;
+    border: 0.5px solid #fff;
+    border-right-color: #808080;
+    border-bottom-color: #808080;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    font-weight: bold;
+    background: #919191;
+    box-shadow: inset 0 1px #fff;
+}
+
+/* Minimiser */
+.icon:nth-child(1):before { content: "⧉"; }
+.icon:nth-child(1):hover {
+    background: #b2b6f7;
+    border-color: #ccd2f5;
+}
+
+/* Maximiser */
+.icon:nth-child(2):before { content: "⬜"; }
+.icon:nth-child(2):hover {
+    background: #b2b6f7;
+    border-color: #ccd2f5;
+}
+
+/* Fermer (rouge au hover) */
+.icon:nth-child(3):before { content: "✖"; }
+.icon:nth-child(3):hover {
+    background: #ff4444;
+    border-color: #ff0000;
+    color: #000000;
+}
+.icon:nth-child(3) {
+    cursor: pointer !important;
+}
+
+
+.title {
+    flex: 1;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.output {
+    height: calc(100% - 78px);
+    overflow-y: auto;
+    white-space: pre-wrap;
+    padding: 35px 15px 15px;
+    box-sizing: border-box;
+}
+
+.input-line {
+    display: flex;
+    align-items: center;
+    padding-left: 15px;
+}
+
+.prompt {
+    color: #00ff00;
+    margin-right: 5px;
+}
+
+#cmd-input {
+    background: transparent;
+    border: none;
+    color: #00ff00;
+    font-family: inherit;
+    font-size: 16px;
+    flex: 1;
+    outline: none;
+    caret-color: #00ff00;
+    font-weight: normal;
+}
+
+ .floating-cv-btn {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 10px 15px;
+    background: linear-gradient(145deg, #00ff00, #00cc00);
+    color: #000;
+    text-decoration: none;
+    font-family: 'Courier New', monospace;
+    font-size: 14px;
+    font-weight: bold;
+    border: 2px solid #000;
+    border-radius: 5px;
+    box-shadow: 
+        0 4px 10px rgba(0,255,0,0.3),
+        inset 0 1px 0 rgba(255,255,255,0.3);
+    z-index: 1000;
+    transition: all 0.2s ease;
+}
+
+.floating-cv-btn:hover {
+    background: linear-gradient(145deg, #7fdf7f, #24ff24);
+    transform: translateY(-2px);
+    box-shadow: 
+        0 6px 15px rgba(0,255,0,0.5),
+        inset 0 1px 0 rgba(255,255,255,0.4);
+}
+
+.floating-cv-btn:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 5px rgba(0,255,0,0.3);
+}
+
+.prompt-text {
+    font-weight: 700 !important;  
+    color: #00ff00;               
+}
+
+.cmd-user-text {
+    font-weight: normal !important;
+    color: #00ff00;
+}
+
+.mail-link {
+  color: yellow;
+}
+
+.git-link {
+    color:#00ff00;
+}

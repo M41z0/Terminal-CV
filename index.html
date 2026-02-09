@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV Terminal</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="terminal">
+        <!-- Barre de titre -->
+        <div class="terminal-titlebar">
+            <div class="window-controls">
+                <div class="icon"></div>
+                <div class="icon"></div>
+                <div class="icon"></div>
+            </div>
+            <div class="title"> Terminal – Guest User</div>
+        </div>
+
+        <!-- Zone de texte -->
+<div class="output" id="output">
+
+</div>
+
+        <!-- Ligne d'entrée -->
+        <div class="input-line">
+            <span class="prompt"><b>guest@cv:~$</b></span>
+            <input type="text" id="cmd-input" autocomplete="off">
+        </div>
+    </div>
+<a href="cv.pdf" download="cv.pdf" class="floating-cv-btn" title="Télécharger CV">
+         CV
+    </a>
+    <script src="script.js"></script>
+</body>
+</html>
+
